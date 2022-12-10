@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-[#121826] text-white">
+        <br>
+        <center><h1> Yours Housely - Property Analyser </h1></center><br>
+        
+        <form method="POST", action="{{url_for('predict')}}">
+            <table class="grid">
+                <tr class="grid grid-cols-4 p-5 flex items-center justify-center">
+                    <td>Property ID:  <input type="text" name='p_id' class="text-black p-2 rounded-lg ml-3" ></td>
+                    <td>Property Type :  <input type="text" name='p_type' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Area :  <input type="text" name='p_area' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>No.of Windows :  <input type="text" name='p_windows' class="text-black p-2 rounded-lg ml-3"></td>
+                </tr>                
+                <tr class="grid grid-cols-4 p-5 flex items-center justify-center">                    
+                    <td>No. of doors :  <input type="text" name='p_doors' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Furnishing :  <input type="text" name='p_furn' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Powercuts :  <input type="text" name='p_pcuts' class="text-black p-2 rounded-lg ml-3"></td> 
+                    <td>Power-backup :  <input type="text" name='p_pbackup' class="text-black p-2 rounded-lg ml-3"></td>
+                </tr>                
+                <tr class="grid grid-cols-4 p-5 flex items-center justify-center">                    
+                    <td>Water supply :  <input type="text" name='p_water' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Traffic Density :  <input type="text" name='p_traffic' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Crime Rate :  <input type="text" name='p_crime' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Dust and Noise :  <input type="text" name='p_dustnoise' class="text-black p-2 rounded-lg ml-3"></td>
+                </tr>                
+                <tr class="grid grid-cols-4 p-5 flex items-center justify-center">                    
+                    <td>Air quality :  <input type="text" name='p_air' class="text-black p-2 rounded-lg ml-3"></td>
+                    <td>Review : <input type="text" name='p_neigh' class="text-black p-2 rounded-lg ml-3"></td>
+                </tr>
+            </table>
+            <button class="m-4 text-xl bg-sky-700 p-2 rounded-lg items-center">Predict</button>
+        </form>
+        <br><br>
+        {{ predict_text }}
+    </body>
+</html>
